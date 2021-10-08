@@ -4,7 +4,7 @@ import InputLabel from '@mui/material/InputLabel';
 import Input from '@mui/material/Input';
 import React, { useState } from 'react';
 import '../styles/SearchBookForm.css';
-
+import { useHistory } from 'react-router';
 const SearchBookForm = () => {
 
   const [ generalKeywords, setGeneralKeyWords ] = useState("");
@@ -14,7 +14,7 @@ const SearchBookForm = () => {
   const [ lang, setLang ] = useState("el");
   const [ printType, setPrintType ] = useState("all");
   const [ filter, setFilter ] = useState("");
-
+  const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
     function getKeyword () {
@@ -55,7 +55,12 @@ const SearchBookForm = () => {
         return filter
       }
     }
-    window.location = `/details/${getKeyword()}/${getAuthor()}/${getBookTitle()}/${getPublisher()}/${getFilter()}/${lang}/${printType}`
+    if (generalKeywords !== ""){
+     history.push(`/details/${getKeyword()}/${getAuthor()}/${getBookTitle()}/${getPublisher()}/${getFilter()}/${lang}/${printType}`)
+    }
+    else {
+      alert("Please Enter a keyword")
+    }
   
 }
 
