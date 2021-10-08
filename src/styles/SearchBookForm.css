@@ -1,0 +1,33 @@
+.searchBook {
+  text-align: center;
+  padding: 50px;
+  margin: auto;
+}
+
+.contactUsFormContainer {
+  width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchBookFormInput {
+  margin-bottom: 30px;
+}
+
+.searchBookFormInput:last-child {
+  margin-bottom: 50px;
+}
+
+#searchBookFormSelectLang {
+  padding: 15px;
+  background: rgb(230, 230, 230);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.searchBookHeading {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
