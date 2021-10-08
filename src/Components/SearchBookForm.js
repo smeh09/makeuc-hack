@@ -12,6 +12,8 @@ const SearchBookForm = () => {
   const [ author, setAuthor ] = useState("");
   const [ publisher, setPublisher ] = useState("");
   const [ lang, setLang ] = useState("");
+  const [ printType, setPrintType ] = useState("");
+  const [ filter, setFilter ] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,6 +51,16 @@ const SearchBookForm = () => {
           <option value="pt">Portugese</option>
           <option value="ru">Russian</option>
           <option value="es">Spanish</option>
+        </select>
+        <select value={printType}  className='searchBookFormInput' onChange={e => {setPrintType(e.target.value)}} onBlur={(e) => setPrintType(e.target.value)} >
+          <option value="all"> All print types</option>
+          <option value="books"> All books</option>
+          <option value="magazines"> All Magazines</option>
+        </select>
+        <select value={filter}  className='searchBookFormInput' onChange={e => {setFilter(e.target.value)}} onBlur={(e) => setFilter(e.target.value)} >
+          <option value="ebooks"> All google ebooks </option>
+          <option value="free-ebooks"> All free google ebooks</option>
+          <option value="paid-ebooks"> All paid google ebooks</option>
         </select>
         <Button type='submit' className='submitButton' onClick={(e) => handleSubmit(e)} variant="contained" type='submit'>Search book</Button>
       </form>

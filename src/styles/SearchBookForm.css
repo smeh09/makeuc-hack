@@ -19,7 +19,7 @@
   margin-bottom: 50px;
 }
 
-#searchBookFormSelectLang {
+select {
   padding: 15px;
   background: rgb(230, 230, 230);
   border-radius: 5px;
