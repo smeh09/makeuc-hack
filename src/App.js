@@ -1,8 +1,9 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route} 
-  from "react-router-dom";
+  Route,
+  Link
+} from "react-router-dom";
 import Results from "./Components/Results";
 import SearchBookForm from './Components/SearchBookForm';
 
@@ -11,6 +12,9 @@ function App() {
     <div>
       <Router>
         <Switch>
+          <Route exact path='/'>
+            <Link to='/searchBook'>Searh quiz page</Link>
+          </Route>
           <Route exact path="/details/:keyword/:keywordInAuthor/:keywordInTtile/:keywordInPublisher/:filter/:lang/:printType">
             <Results />
           </Route>
