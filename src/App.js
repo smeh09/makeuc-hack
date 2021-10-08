@@ -1,9 +1,9 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
-} from "react-router-dom";
+  Route} 
+  from "react-router-dom";
+import Results from "./Components/Results";
 import SearchBookForm from './Components/SearchBookForm';
 
 function App() {
@@ -11,6 +11,9 @@ function App() {
     <div>
       <Router>
         <Switch>
+          <Route exact path="/details/:keyword/:keywordInAuthor/:keywordInTtile/:keywordInPublisher/:filter/:lang/:printType">
+            <Results />
+          </Route>
           <Route exact path='/searchBook'>
             <SearchBookForm />
           </Route>

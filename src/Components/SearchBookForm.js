@@ -11,13 +11,53 @@ const SearchBookForm = () => {
   const [ bookTitle, setBookTitle ] = useState("");
   const [ author, setAuthor ] = useState("");
   const [ publisher, setPublisher ] = useState("");
-  const [ lang, setLang ] = useState("");
-  const [ printType, setPrintType ] = useState("");
+  const [ lang, setLang ] = useState("el");
+  const [ printType, setPrintType ] = useState("all");
   const [ filter, setFilter ] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  }
+    function getKeyword () {
+      let new_key = generalKeywords.replace( / /g, "+")
+      return new_key
+    }
+    function getBookTitle(){
+      if (bookTitle === ""){
+        return "nan"
+      }
+      else {
+        let new_title = bookTitle.replace( / /g, "")
+        return new_title
+      }
+    }
+    function getAuthor(){
+      if (author === ""){
+        return "nan"
+      }
+      else {
+        let new_author = author.replace( / /g, "")
+        return new_author
+      }
+    }
+    function getPublisher(){
+      if (publisher === ""){
+        return "nan"
+      }
+      else {
+        return publisher
+      }
+    }
+    function getFilter(){
+      if (filter === ""){
+        return "none"
+      }
+      else {
+        return filter
+      }
+    }
+    window.location = `/details/${getKeyword()}/${getAuthor()}/${getBookTitle()}/${getPublisher()}/${getFilter()}/${lang}/${printType}`
+  
+}
 
   return (
     <div className='searchBook'>
@@ -25,7 +65,7 @@ const SearchBookForm = () => {
       <form className='contactUsFormContainer'>
         <FormControl>
           <InputLabel>General keywords</InputLabel>
-          <Input value={generalKeywords} onChange={(e) => setGeneralKeyWords(e.target.value)} className='searchBookFormInput' />
+          <Input value={generalKeywords} onChange={(e) => setGeneralKeyWords(e.target.value)} className='searchBookFormInput' required/>
         </FormControl>
         <FormControl>
           <InputLabel>Book title</InputLabel>
@@ -58,11 +98,12 @@ const SearchBookForm = () => {
           <option value="magazines"> All Magazines</option>
         </select>
         <select value={filter}  className='searchBookFormInput' onChange={e => {setFilter(e.target.value)}} onBlur={(e) => setFilter(e.target.value)} >
+          <option value="none"> None </option>
           <option value="ebooks"> All google ebooks </option>
           <option value="free-ebooks"> All free google ebooks</option>
           <option value="paid-ebooks"> All paid google ebooks</option>
         </select>
-        <Button type='submit' className='submitButton' onClick={(e) => handleSubmit(e)} variant="contained" type='submit'>Search book</Button>
+        <Button className='submitButton' onClick={(e) => handleSubmit(e)} variant="contained" type='submit'>Search book</Button>
       </form>
     </div>
   );
