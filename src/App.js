@@ -8,6 +8,8 @@ import SearchBookForm from './Components/SearchBookForm';
 import BookSelect from "./Components/BookSelect";
 import { Header } from "./Components/Header"
 import { HomeAppHero } from "./Components/HomeAppHero";
+import { ContanctUs } from "./Components/ContactUs";
+import { Features } from "./Components/Features";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <HomeAppHero />
+            <Features />
+            <ContanctUs />
           </Route>
           <Route exact path="/book/:id">
               <BookSelect/>

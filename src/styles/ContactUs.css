@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.contactUs {
+  text-align: center;
+  padding: 100px;
+  margin: auto;
+}
+
+.contactUsFormContainer {
+  width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactUsNameInput {
+  margin-bottom: 30px;
+}
+
+.contactUsNameInput:last-child {
+  margin-bottom: 60px;
+}
+
+.contactUsHeading {
+  font-size: 47px;
+  font-family: Poppins;
+  text-align: center;
+  margin-bottom: 70px;
+}
