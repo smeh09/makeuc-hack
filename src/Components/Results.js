@@ -38,9 +38,9 @@ const Results = (props) => {
                     <div className='bookRightArea'>
                         <h2 className='bookTite'>{book.volumeInfo.title}</h2>
                         <div className='bookDescr'>
-                        <h2 className='bookAuthor'>{book.volumeInfo.authors}</h2>
-                        <h2 className='bookCategories'>{book.volumeInfo.categories}</h2>
-                        <Button variant="contained"><Link to={`/book/${book.id}`} className='knowMoreButton'>Know More</Link></Button>
+                            <h2 className='bookAuthor'>{book.volumeInfo.authors}</h2>
+                            <h2 className='bookCategories'>{book.volumeInfo.categories}</h2>
+                            <Button variant="contained"><Link to={`/book/${book.id}`} className='knowMoreButton'>Know More</Link></Button>
                         </div>
                     </div>
                 </div>

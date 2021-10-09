@@ -2,19 +2,20 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Results from "./Components/Results";
 import SearchBookForm from './Components/SearchBookForm';
 import BookSelect from "./Components/BookSelect";
+import { Header } from "./Components/Header"
 
 function App() {
   return (
     <div>
       <Router>
+        <Header title="Search Books" />
         <Switch>
           <Route exact path='/'>
-            <Link to='/searchBook'>Searh quiz page</Link>
+            
           </Route>
           <Route exact path="/book/:id">
               <BookSelect/>
