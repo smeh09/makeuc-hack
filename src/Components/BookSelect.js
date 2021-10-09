@@ -77,7 +77,7 @@ const BookSelect = (props) => {
 
         } 
     }
-    
+
     return (
         <div>
             {book.map((booker,i )=> (
@@ -86,7 +86,9 @@ const BookSelect = (props) => {
                     <h1>{booker.volumeInfo.title}</h1>
                     <h2>{booker.volumeInfo.authors}</h2>
                     <h2>{booker.volumeInfo.publisher}</h2>
-                    <h2>{booker.volumeInfo.description}</h2>
+                    <h2 dangerouslySetInnerHTML={{__html: booker.volumeInfo.description}}></h2>
+                    <h3>{`Number of Pages in the ebook form: ${booker.volumeInfo.pageCount}`}</h3>
+                     <h3>{`Number of Pages in the print form: ${booker.volumeInfo.printedPageCount}`}</h3>
                     {getSaleStuff(booker)}
                     <h3>{booker.volumeInfo.categories}</h3>
                     <h3>{getRating(booker)}</h3>
