@@ -1,0 +1,30 @@
+.bookData {
+  padding: 50px;
+}
+
+.bookContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.bookImg {
+  width: 270px;
+  margin-bottom: 50px;
+}
+
+.bookTitle {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.link > div > a {
+  background: rgb(44, 118, 255);
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
