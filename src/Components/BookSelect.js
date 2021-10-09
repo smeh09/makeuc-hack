@@ -65,6 +65,14 @@ const BookSelect = (props) => {
             return "https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"
         }
     }
+    function getPreview(book){
+        if (book.accessInfo.accessViewStatus !== "NONE"){
+            return (<a href={`${book.accessInfo.webReaderLink}`}>Here is the preview link for your book</a>)
+        }
+        else {
+            return (<h2 > Preview is not available for this book</h2>)
+        } 
+    }
     return (
         <div>
             {book.map((booker,i )=> (
@@ -77,7 +85,7 @@ const BookSelect = (props) => {
                     {getSaleStuff(booker)}
                     <h3>{booker.volumeInfo.categories}</h3>
                     <h3>{getRating(booker)}</h3>
-                    <a href={booker.accessInfo.webReaderLink}>Preview Link for your book (Please note that sometimes these links will not work if your book is not previewable)</a>
+                    {getPreview(booker)}
                 </div>
             ))}
             
