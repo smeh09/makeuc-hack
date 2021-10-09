@@ -27,12 +27,12 @@
 }
 
 .navLink {
-  color: black;
+  color: black !important;
   text-decoration: none;
 }
 
 .navListLinkButton {
   font-family: Inter;
   font-size: 19px !important;
-  color: black;
+  color: black !important;
 }
