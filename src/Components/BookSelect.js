@@ -102,14 +102,14 @@ const BookSelect = (props) => {
                         <h1 className='bookTitle'>{booker.volumeInfo.title}</h1>
                         <h2 className='bookAuthor'>Authors: {booker.volumeInfo.authors}</h2>
                         <h2 className='bookPublishers'>Publishers: {booker.volumeInfo.publisher}</h2>
-                        <h1>Description: </h1>
+                        <h2>Description: </h2>
                         <p className='bookDescr' dangerouslySetInnerHTML={{ __html: booker.volumeInfo.description }}></p>
                         <p>{`Number of Pages in the ebook form: ${booker.volumeInfo.pageCount}`}</p>
                         <p>{`Number of Pages in the print form: ${booker.volumeInfo.printedPageCount}`}</p>
                         <div className='link'>{getSaleStuff(booker)}</div>
                         <hr />
                         <h2 className='bookSaleInfo'>SALE INFO: {booker.volumeInfo.categories}</h2>
-                        <h3 className='bookRating'>Rating: &nbsp;<div className='imgs'>{getRating(booker)}</div></h3>
+                        <h3>{getRating(booker)}</h3>
                         <div className='link'>{getPreview(booker)}</div>
                     </div>
                 </div>
