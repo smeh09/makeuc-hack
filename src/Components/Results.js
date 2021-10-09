@@ -4,6 +4,8 @@ import CleanUrl from '../modules/CleanUrl';
 import ApiCall from "../modules/ApiCall";
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import "../styles/Result.css";
+
 const Results = (props) => {
     const [books, setBooks] = useState([])
     let params = useParams()
@@ -28,15 +30,16 @@ const Results = (props) => {
         }
     }
     return(
-        <div>
+        <div className='results'>
             {books.map(book =>(
-                <div key={book.id} id={book.id}>
-                    <img src={getImage(book)} alt="the cover of your book"/>
-                    <h1>{book.volumeInfo.title}</h1>
-                    <h2>{book.volumeInfo.authors}</h2>
-                    <h2>{book.volumeInfo.pusblisher}</h2>
-                    <h2>{book.volumeInfo.categories}</h2>
-                    <Link to={`/book/${book.id}`}>Know More</Link>
+                <div className='book' key={book.id} id={book.id}>
+                    <img className='bookThumbNail' src={getImage(book)} alt="the cover of your book"/>
+                    <div className='bookRightArea'>
+                        <h2 className='bookTite'>{book.volumeInfo.title}</h2>
+                        <h2 className='bookAuthor'>{book.volumeInfo.authors}</h2>
+                        <h2 className='bookCategories'>{book.volumeInfo.categories}</h2>
+                        <Link to={`/book/${book.id}`}>Know More</Link>
+                    </div>
                 </div>
             ))}
         </div>

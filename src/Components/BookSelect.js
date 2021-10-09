@@ -26,7 +26,6 @@ const BookSelect = (props) => {
                     <h2>{booker.volumeInfo.publisher}</h2>
                     <h2>{booker.saleInfo.saleability}</h2>
                     <h3>{booker.volumeInfo.categories}</h3>
-                    <h3></h3>
                     <h3> Rating: {booker.volumeInfo.averageRating}  stars out of 5</h3>
                 </div>
             ))}
