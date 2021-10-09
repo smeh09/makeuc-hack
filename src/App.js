@@ -10,7 +10,7 @@ import { Header } from "./Components/Header"
 import { HomeAppHero } from "./Components/HomeAppHero";
 import { ContanctUs } from "./Components/ContactUs";
 import { Features } from "./Components/Features";
-
+import DictApiResults from "./Components/DictApiResults";
 function App() {
   return (
     <div>
@@ -21,6 +21,9 @@ function App() {
             <HomeAppHero />
             <Features />
             <ContanctUs />
+          </Route>
+          <Route exact path="/dictionary/:lang/:word">
+              <DictApiResults/>
           </Route>
           <Route exact path="/book/:id">
               <BookSelect/>
