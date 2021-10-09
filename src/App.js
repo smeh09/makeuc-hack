@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Results from "./Components/Results";
 import SearchBookForm from './Components/SearchBookForm';
+import BookSelect from "./Components/BookSelect";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Link to='/searchBook'>Searh quiz page</Link>
+          </Route>
+          <Route exact path="/book/:id">
+              <BookSelect/>
           </Route>
           <Route exact path="/details/:keyword/:keywordInAuthor/:keywordInTtile/:keywordInPublisher/:filter/:lang/:printType">
             <Results />
