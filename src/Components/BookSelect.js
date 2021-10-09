@@ -53,7 +53,20 @@ const BookSelect = (props) => {
     }
     function getRating(book) {
         if (book.volumeInfo.averageRating !== undefined) {
-            return `Rating: ${book.volumeInfo.averageRating} stars out of 5`
+            const rating = book.volumeInfo.averageRating;
+            const lengthArray = [1, 2, 3, 4, 5];
+            return ( lengthArray.map((num, i) => {
+                if (num <= rating) {
+                    return (
+                        <img className='starImg' key={i} src='https://freeiconshop.com/wp-content/uploads/edd/star-outline-filled.png' alt='full star' />
+                    )
+                }
+                else {
+                    return (
+                        <img className='starImg' key={i} src='https://www.shareicon.net/data/512x512/2015/10/02/650094_empty_512x512.png' alt='empty star' />
+                    )
+                }
+            }) )
         }
         else {
             return `Rating: Not Available`
