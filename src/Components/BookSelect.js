@@ -50,18 +50,34 @@ const BookSelect = (props) => {
         }
     }
     function getRating(book){
-        if (book.volumeInfo.averageRating ){}
+        if (book.volumeInfo.averageRating !== undefined){
+            return `Rating: ${book.volumeInfo.averageRating} stars out of 5`
+        }
+        else {
+            return `Rating: Not Available`
+        }
+    }
+    function getImage(book){
+        if (book.volumeInfo.imageLinks !== undefined){
+            return book.volumeInfo.imageLinks.thumbnail
+        }
+        else {
+            return "https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"
+        }
     }
     return (
         <div>
             {book.map((booker,i )=> (
                 <div key={i}>
+                <img src={getImage(booker)} alt="cover of your book"/>
                     <h1>{booker.volumeInfo.title}</h1>
                     <h2>{booker.volumeInfo.authors}</h2>
                     <h2>{booker.volumeInfo.publisher}</h2>
+                    <h2>{booker.volumeInfo.description}</h2>
                     {getSaleStuff(booker)}
                     <h3>{booker.volumeInfo.categories}</h3>
-                    <h3> Rating: {booker.volumeInfo.averageRating}  stars out of 5</h3>
+                    <h3>{getRating(booker)}</h3>
+                    <a href={booker.accessInfo.webReaderLink}>Preview Link for your book (Please note that sometimes these links will not work if your book is not previewable)</a>
                 </div>
             ))}
             
