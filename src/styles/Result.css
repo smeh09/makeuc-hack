@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   border-radius: 7px;
+  text-align: right;
   background: rgb(241, 241, 241);
   box-shadow: 1px 3px 15px rgb(148, 148, 148);
 }
