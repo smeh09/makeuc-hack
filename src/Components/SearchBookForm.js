@@ -111,7 +111,7 @@ const SearchBookForm = () => {
           <option value="free-ebooks"> All free google ebooks</option>
           <option value="paid-ebooks"> All paid google ebooks</option>
         </select>
-        <Button disabled={generalKeywords === "" && publisher==="" && bookTitle === "" && author === ""} className='submitButton' onClick={(e) => handleSubmit(e)} variant="contained" type='submit'>Search book</Button>
+        <Button disabled={generalKeywords.trim() === "" && publisher.trim() ==="" && bookTitle.trim() === "" && author.trim() === ""} className='submitButton' onClick={(e) => handleSubmit(e)} variant="contained" type='submit'>Search book</Button>
       </form>
     </div>
   );
