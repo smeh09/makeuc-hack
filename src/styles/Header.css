@@ -2,8 +2,8 @@
 
 .header {
   display: flex;
-  justify-content: space-around;
-  padding: 5px;
+  justify-content: space-between;
+  padding: 7px 100px;
   background: transparent;
   align-items: center;
   font-size: 20px;
