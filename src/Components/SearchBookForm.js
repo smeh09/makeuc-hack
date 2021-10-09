@@ -18,8 +18,14 @@ const SearchBookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     function getKeyword () {
-      let new_key = generalKeywords.replace( / /g, "+")
-      return new_key
+      if (generalKeywords !== ""){
+        let new_key = generalKeywords.replace( / /g, "+")
+        return new_key
+      }
+      else {
+        return "none"
+      }
+      
     }
     function getBookTitle(){
       if (bookTitle === ""){
@@ -56,12 +62,8 @@ const SearchBookForm = () => {
         return filter
       }
     }
-    if (generalKeywords !== ""){
      history.push(`/details/${getKeyword()}/${getAuthor()}/${getBookTitle()}/${getPublisher()}/${getFilter()}/${lang}/${printType}`)
-    }
-    else {
-      alert("Please Enter a keyword")
-    }
+
   
 }
 
@@ -109,7 +111,7 @@ const SearchBookForm = () => {
           <option value="free-ebooks"> All free google ebooks</option>
           <option value="paid-ebooks"> All paid google ebooks</option>
         </select>
-        <Button disabled={!generalKeywords.trim()} className='submitButton' onClick={(e) => handleSubmit(e)} variant="contained" type='submit'>Search book</Button>
+        <Button disabled={generalKeywords === "" && publisher==="" && bookTitle === "" && author === ""} className='submitButton' onClick={(e) => handleSubmit(e)} variant="contained" type='submit'>Search book</Button>
       </form>
     </div>
   );

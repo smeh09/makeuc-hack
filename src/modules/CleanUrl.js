@@ -1,6 +1,11 @@
 function CleanUrl (general_q, q_author, q_title, q_publisher, filter, lang, print_type) {
     const getQuery = () => {
-        return `q=${general_q}`
+        if (general_q !== "none"){
+        return `${general_q}`
+        }
+        else {
+            return ""
+        }
     }
     const getAuthor = () => {
         if (q_author !== "nan"){
@@ -43,7 +48,7 @@ function CleanUrl (general_q, q_author, q_title, q_publisher, filter, lang, prin
             return ""
         }
     } 
-    const url = `https://www.googleapis.com/books/v1/volumes?${getQuery()}${getAuthor()}${getTtile()}${getPublisher()}${getLang()}${getFilter()}&printType=${print_type}`
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${getQuery()}${getAuthor()}${getTtile()}${getPublisher()}${getLang()}${getFilter()}&printType=${print_type}`
     console.log(url)
     return url;
 }

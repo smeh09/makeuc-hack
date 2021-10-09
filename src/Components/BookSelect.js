@@ -93,6 +93,7 @@ const BookSelect = (props) => {
                     <h3>{booker.volumeInfo.categories}</h3>
                     <h3>{getRating(booker)}</h3>
                     {getPreview(booker)}
+                
                 </div>
             ))}
             
