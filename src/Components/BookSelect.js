@@ -66,7 +66,7 @@ const BookSelect = (props) => {
         }
     }
     function getPreview(book){
-        if (book.accessInfo.accessViewStatus !== "NONE" && book.accessInfo.accessViewStatus !=="SAMPLE"){
+        if (book.accessInfo.accessViewStatus !== "NONE"){
             return (<a href={`${book.accessInfo.webReaderLink}`}>Here is the preview link for your book</a>)
         }
         else {
