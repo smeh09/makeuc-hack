@@ -5,6 +5,7 @@ import ApiCall from "../modules/ApiCall";
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/Result.css";
+import Button from '@mui/material/Button';
 
 const Results = (props) => {
     const [books, setBooks] = useState([])
@@ -38,7 +39,7 @@ const Results = (props) => {
                         <h2 className='bookTite'>{book.volumeInfo.title}</h2>
                         <h2 className='bookAuthor'>{book.volumeInfo.authors}</h2>
                         <h2 className='bookCategories'>{book.volumeInfo.categories}</h2>
-                        <Link to={`/book/${book.id}`}>Know More</Link>
+                        <Button variant="contained"><Link to={`/book/${book.id}`} className='knowMoreButton'>Know More</Link></Button>
                     </div>
                 </div>
             ))}

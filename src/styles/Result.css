@@ -4,7 +4,7 @@
 
 .book {
   margin: 40px;
-  padding: 50px 200px;
+  padding: 50px 100px;
   display: flex;
   justify-content: space-between;
   border-radius: 7px;
@@ -21,4 +21,9 @@
 .bookTite {
   font-size: 35px;
   letter-spacing: 2.5px;
+}
+
+.knowMoreButton {
+  color: white;
+  text-decoration: none;
 }
