@@ -55,7 +55,7 @@
 .links{
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 #preview{
