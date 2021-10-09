@@ -83,7 +83,7 @@ const BookSelect = (props) => {
     function getPreview(book) {
         if (book.accessInfo.accessViewStatus !== "NONE") {
             return (<div>
-                <a href={`${book.accessInfo.webReaderLink}`}>link to preview your book</a>
+                <a href={`${book.accessInfo.webReaderLink}`}>Link to preview your book</a>
                 
             </div>)
         }
@@ -110,10 +110,11 @@ const BookSelect = (props) => {
                         {booker.volumeInfo.categories}
                         <hr />
                         <h2 className='bookSaleInfo'>SALE INFO: </h2>
-                
+                        <div className='links'>
                             <div className='link'>{getSaleStuff(booker)}</div>
                             <div className='link' id="preview">{getPreview(booker)}</div>
-                            <h2>Note that previews may not work for some books</h2>
+                        </div>
+                        <h2 className='note'>Note that previews may not work for some books</h2>
                     </div>
                 </div>
             ))}
