@@ -26,7 +26,7 @@ const BookSelect = (props) => {
                     return (
                         <div>
                             <h2>Price: {`${book.saleInfo.listPrice.amount} INR`}</h2>
-                            <a href={book.saleInfo.buyLink}>`Link` to buy your book</a>
+                            <a href={book.saleInfo.buyLink}>Link to buy your book</a>
                         </div>
                     )
 
@@ -83,8 +83,8 @@ const BookSelect = (props) => {
     function getPreview(book) {
         if (book.accessInfo.accessViewStatus !== "NONE") {
             return (<div>
-                <a href={`${book.accessInfo.webReaderLink}`}>Here is the preview link for your book</a>
-                <h2>Note that previews may not work for some books</h2>
+                <a href={`${book.accessInfo.webReaderLink}`}>link to preview your book</a>
+                
             </div>)
         }
         else {
@@ -106,11 +106,14 @@ const BookSelect = (props) => {
                         <p className='bookDescr' dangerouslySetInnerHTML={{ __html: booker.volumeInfo.description }}></p>
                         <p>{`Number of Pages in the ebook form: ${booker.volumeInfo.pageCount}`}</p>
                         <p>{`Number of Pages in the print form: ${booker.volumeInfo.printedPageCount}`}</p>
-                        <div className='link'>{getSaleStuff(booker)}</div>
-                        <hr />
-                        <h2 className='bookSaleInfo'>SALE INFO: {booker.volumeInfo.categories}</h2>
                         <h3>{getRating(booker)}</h3>
-                        <div className='link'>{getPreview(booker)}</div>
+                        {booker.volumeInfo.categories}
+                        <hr />
+                        <h2 className='bookSaleInfo'>SALE INFO: </h2>
+                
+                            <div className='link'>{getSaleStuff(booker)}</div>
+                            <div className='link' id="preview">{getPreview(booker)}</div>
+                            <h2>Note that previews may not work for some books</h2>
                     </div>
                 </div>
             ))}

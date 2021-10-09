@@ -47,3 +47,13 @@
 .bookAuthor{
   text-align: center
 }
+
+.sale-container{
+  display: flex;
+
+}
+
+#preview{
+  margin-left: 25%;
+  margin-top: -2%;
+}
