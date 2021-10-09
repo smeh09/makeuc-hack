@@ -30,5 +30,10 @@
 }
 
 .starImg {
-  width: 50px;
+  width: 30px;
+}
+
+.bookRating {
+  display: flex;
+  align-items: center;
 }

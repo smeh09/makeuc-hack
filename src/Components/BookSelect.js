@@ -109,7 +109,7 @@ const BookSelect = (props) => {
                         <div className='link'>{getSaleStuff(booker)}</div>
                         <hr />
                         <h2 className='bookSaleInfo'>SALE INFO: {booker.volumeInfo.categories}</h2>
-                        <h3>{getRating(booker)}</h3>
+                        <h3 className='bookRating'>Rating: &nbsp;<div className='imgs'>{getRating(booker)}</div></h3>
                         <div className='link'>{getPreview(booker)}</div>
                     </div>
                 </div>
