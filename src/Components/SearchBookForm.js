@@ -35,7 +35,7 @@ const SearchBookForm = () => {
         return "nan"
       }
       else {
-        let new_author = author.replace( / /g, "")
+        let new_author = author.replace( / /g, "+")
         return new_author
       }
     }
@@ -44,7 +44,8 @@ const SearchBookForm = () => {
         return "nan"
       }
       else {
-        return publisher
+        let new_publisher = publisher.replace( / /g, "+")
+        return new_publisher
       }
     }
     function getFilter(){
