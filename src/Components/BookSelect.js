@@ -48,7 +48,7 @@ const BookSelect = (props) => {
             }
         }
         else {
-            return <h2>{`${book.saleInfo.saleability}`}</h2>
+            return <h2>{`Not For Sale`}</h2>
         }
     }
     function getRating(book) {
