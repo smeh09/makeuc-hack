@@ -22,6 +22,7 @@ const DictApiResults = (props) => {
     }, [url])
 
     console.log(meaning)
+
     if (meaning.title !== "No Definitions Found"){
     return (
         <div className="meaning-container">
