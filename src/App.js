@@ -12,6 +12,7 @@ import { ContanctUs } from "./Components/ContactUs";
 import { Features } from "./Components/Features";
 import DictApiResults from "./Components/DictApiResults";
 import DictForm from "./Components/DictForm";
+import About from "./Components/About";
 function App() {
   return (
     <div>
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route exact path='/searchBook'>
             <SearchBookForm />
+          </Route>
+          <Route exact path='/about'>
+            <About/>
           </Route>
           <Route exact path='/searchDictionary'>
             <DictForm/>

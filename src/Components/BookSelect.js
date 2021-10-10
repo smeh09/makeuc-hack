@@ -99,35 +99,46 @@ const BookSelect = (props) => {
         }
     }
 
-    return (
-        <div className='bookData'>
-            {book.map((booker, i) => (
-                <div className='bookContainer' key={i}>
-                    <img className='bookImg' src={getImage(booker)} alt="cover of your book" />
-                    <div className='bookBottomArea'>
-                        <h1 className='bookTitle'>{booker.volumeInfo.title}</h1>
-                        <h2 className='bookAuthor'>Authors: {booker.volumeInfo.authors}</h2>
-                        <h2 className='bookPublishers'>Publishers: {booker.volumeInfo.publisher}</h2>
-                        <h2>Description: </h2>
-                        <p className='bookDescr' dangerouslySetInnerHTML={{ __html: booker.volumeInfo.description }}></p>
-                        <p>{`Number of Pages in the ebook form: ${booker.volumeInfo.pageCount}`}</p>
-                        <p>{`Number of Pages in the print form: ${booker.volumeInfo.printedPageCount}`}</p>
-                        <h3>{getRating(booker)}</h3>
-                        {booker.volumeInfo.categories}
-                        <hr />
-                        <h2 className='bookSaleInfo'>SALE INFO: </h2>
-                        {getPrice(booker)}
-                        <div className='links'>
-                            <div className='link'>{getSaleStuff(booker)}</div>
-                            <div className='link' id="preview">{getPreview(booker)}</div>
+    if (book.totalItems !== 0){
+        return (
+            <div className='bookData'>
+                {console.log(book.totalItems)}
+                {book.map((booker, i) => (
+                    <div className='bookContainer' key={i}>
+                        <img className='bookImg' src={getImage(booker)} alt="cover of your book" />
+                        <div className='bookBottomArea'>
+                            <h1 className='bookTitle'>{booker.volumeInfo.title}</h1>
+                            <h2 className='bookAuthor'>Authors: {booker.volumeInfo.authors}</h2>
+                            <h2 className='bookPublishers'>Publishers: {booker.volumeInfo.publisher}</h2>
+                            <h2>Description: </h2>
+                            <p className='bookDescr' dangerouslySetInnerHTML={{ __html: booker.volumeInfo.description }}></p>
+                            <p>{`Number of Pages in the ebook form: ${booker.volumeInfo.pageCount}`}</p>
+                            <p>{`Number of Pages in the print form: ${booker.volumeInfo.printedPageCount}`}</p>
+                            <h3>{getRating(booker)}</h3>
+                            {booker.volumeInfo.categories}
+                            <hr />
+                            <h2 className='bookSaleInfo'>SALE INFO: </h2>
+                            {getPrice(booker)}
+                            <div className='links'>
+                                <div className='link'>{getSaleStuff(booker)}</div>
+                                <div className='link' id="preview">{getPreview(booker)}</div>
+                            </div>
+                            <h2 className='note'>Note that previews may not work for some books</h2>
                         </div>
-                        <h2 className='note'>Note that previews may not work for some books</h2>
                     </div>
-                </div>
-            ))}
+                ))}
 
-        </div>
-    )
+            </div>
+        )
+    }
+    else {
+        return (
+        <div>
+            <h2>No Results Found</h2>
+            <img src="https://cdn.dribbble.com/users/1554526/screenshots/3399669/no_results_found.png" alt="error "/>
+            <h3>We could not find any results related to your search, please try again later or with a different a keyword</h3>
+        </div>)
+    }
 
 }
 
