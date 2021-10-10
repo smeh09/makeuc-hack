@@ -4,7 +4,6 @@ import InputLabel from '@mui/material/InputLabel';
 import Input from '@mui/material/Input';
 import "../styles/ContactUs.css";
 import React, { useState } from 'react';
-
 export const ContanctUs = () => {
 
   const [ nameInput, setNameInput ] = useState("");
