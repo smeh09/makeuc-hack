@@ -21,35 +21,41 @@ const BookSelect = (props) => {
     }, [url])
     function getSaleStuff(book) {
         if (book.saleInfo.saleability === "FOR_SALE") {
-            if (book.saleInfo.listPrice !== undefined) {
-                if (book.saleInfo.buyLink !== undefined) {
-                    return (
-                        <div>
-                            <h2>Price: {`${book.saleInfo.listPrice.amount} INR`}</h2>
-                            <a href={book.saleInfo.buyLink}>Link to buy your book</a>
-                        </div>
-                    )
+           
+            if (book.saleInfo.buyLink !== undefined) {
+                return (
+                    <div>
+                        <a href={book.saleInfo.buyLink}>Link to buy your book</a>
+                    </div>
+                )
 
                 }
                 else {
                     return (
                         <div>
-                            <h2>Price: {`${book.saleInfo.listPrice}`}</h2>
-                            <h2>Link: {`Not Available`}</h2>
+                            <h2>Link: {`Link Not Available`}</h2>
                         </div>
                     )
                 }
             }
-            else {
-                return (<div>
-                    <h2>Price: {`Not Available`}</h2>
-                    <h2>Link: {`Not Available`}</h2>
-                </div>)
-            }
-        }
+            
         else {
             return <h2>{`Not For Sale`}</h2>
         }
+    }
+    function getPrice(book){
+        if (book.saleInfo.saleability === "FOR_SALE") {
+            if (book.saleInfo.listPrice !== undefined){
+                return ( <h2 className="price">Price: {book.saleInfo.listPrice.amount} {book.saleInfo.listPrice.currencyCode}</h2>)
+            }
+            else {
+                return (<h2 className="price">Price Not Available </h2>)
+            }
+        }
+        else {
+                return (<h2 className="price">Not For Sale </h2>)
+            }
+
     }
     function getRating(book) {
         if (book.volumeInfo.averageRating !== undefined) {
@@ -110,6 +116,7 @@ const BookSelect = (props) => {
                         {booker.volumeInfo.categories}
                         <hr />
                         <h2 className='bookSaleInfo'>SALE INFO: </h2>
+                        {getPrice(booker)}
                         <div className='links'>
                             <div className='link'>{getSaleStuff(booker)}</div>
                             <div className='link' id="preview">{getPreview(booker)}</div>

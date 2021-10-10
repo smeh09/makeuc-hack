@@ -58,6 +58,10 @@
   justify-content: space-evenly;
 }
 
+.price{
+  text-align: center;
+}
+
 #preview{
   margin-left: 25%;
   margin-top: -2%;

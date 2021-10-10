@@ -14,9 +14,13 @@ const DictForm = () => {
         e.preventDefault()
         history.push(`/dictionary/${lang}/${word}`)
     }
+    function hasWhiteSpace(s) {
+        return s.indexOf(' ') >= 0;
+    }
+
     return (
         <div className="searchBook">
-            <h1>Input Your Word</h1>
+            <h1>Input Your Word (No Spaces Allowed)</h1>
             <form className = 'contactUsFormContainer'>
                 <FormControl>
                     <InputLabel>Word</InputLabel>
@@ -28,7 +32,7 @@ const DictForm = () => {
                     <option value="de">German</option>
                     <option value="es">Spanish</option>
                 </select>
-                <Button disabled= {word.trim() === ""}className='submitButton' variant="contained" type='submit' onClick={(e) => handleSubmit(e)}>Search book</Button>
+                <Button disabled= {word.trim() === "" || hasWhiteSpace(word) === true}className='submitButton' variant="contained" type='submit' onClick={(e) => handleSubmit(e)}>Get Meaning</Button>
             </form>
         </div>
     )
