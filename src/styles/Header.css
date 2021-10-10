@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap%27');
 
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 7px 100px;
+  padding: 10px 100px;
   background: transparent;
   align-items: center;
   font-size: 20px;
@@ -25,16 +25,18 @@
   .header {
     flex-direction: column;
     align-items: center;
+    padding: 20px;
   }
   .navList {
     margin-left: 0 !important;
     padding-left: 0 !important;
+    flex-direction: column;
+    align-items: center;
   }
   .navListItem {
-    margin-left: 25px;
-  }
-  .navListItem:last-child {
     margin-left: 0 !important;
+    text-align: center;
+    margin: 10px 0;
   }
 }
 

@@ -11,6 +11,18 @@
   flex-direction: column;
 }
 
+@media screen and (max-width: 800px) {
+  .contactUsFormContainer {
+    width: 400px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contactUsFormContainer {
+    width: 300px !important;
+  }
+}
+
 .searchBookFormInput {
   margin-bottom: 30px;
   

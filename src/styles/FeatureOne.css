@@ -31,5 +31,20 @@
 }
 
 .feature1Img {
-  width: 500px;
+  width: 400px;
+  filter: drop-shadow(8px 8px 10px gray);
+  border-radius: 7px;
+  margin: auto;
+}
+
+@media screen and (max-width: 605px) {
+  .feature1Img {
+    width: 300px;
+  }
+  .feature1Heading {
+    font-size: 35px;
+  }
+  .features {
+    margin-bottom: 30px !important;
+  }
 }
