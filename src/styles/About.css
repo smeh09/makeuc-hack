@@ -21,6 +21,30 @@
     filter: drop-shadow(8px 8px 10px gray);
     margin-left: auto;
     margin-right: auto;
-
-
 }
+@media screen and (max-width: 710px){
+    .image {
+        height: 360px;
+    }
+    .header {
+        margin-left: -85px;
+    }
+}
+@media screen and (max-width: 450px){
+    .header{
+        width: 160vw;
+    }
+    .h1-about{
+        width: 180vw;
+    }
+    .h2-desc{
+        width: 180vw;
+    }
+    .image{
+        width: 150vw;
+        margin-left: 14%;
+    }
+    
+}
+
+
