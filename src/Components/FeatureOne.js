@@ -12,7 +12,7 @@ export const FeatureOne = () => {
         </p>
       </div>
       <div className='feature1BottomArea'>
-      <img className='feature1Img' src='https://blogs.constantcontact.com/wp-content/uploads/2014/01/FindingYourBusiness.png' alt='feature-1' />
+      <img className='feature1Img' src='https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/151/posts/31931/image/search-sites-google.jpg' alt='feature-1' />
       </div>
     </div>
   )

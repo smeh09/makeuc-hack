@@ -7,12 +7,13 @@ import Results from "./Components/Results";
 import SearchBookForm from './Components/SearchBookForm';
 import BookSelect from "./Components/BookSelect";
 import { Header } from "./Components/Header"
-import { HomeAppHero } from "./Components/HomeAppHero";
 import { ContanctUs } from "./Components/ContactUs";
 import { Features } from "./Components/Features";
 import DictApiResults from "./Components/DictApiResults";
 import DictForm from "./Components/DictForm";
 import About from "./Components/About";
+import { Cards } from "./Components/Cards";
+
 function App() {
   return (
     <div>
@@ -21,8 +22,8 @@ function App() {
         
         <Switch>
           <Route exact path='/'>
-            <HomeAppHero />
             <Features />
+            <Cards />
             <ContanctUs />
           </Route>
           <Route exact path="/dictionary/:lang/:word">
