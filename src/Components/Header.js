@@ -19,6 +19,9 @@ export const Header = ({ title }) => {
             <Link className="navLink" to='/about'><Button className='navListLinkButton' variant="text">About</Button></Link>
             </li>
             <li className="navListItem">
+              <Link className="navLink" to='/searchDictionary'><Button className='navListLinkButton' variant="text">Get Meanings </Button></Link>
+            </li>
+            <li className="navListItem">
             <Link className="navLink" to='/searchBook'><Button className='navListLinkButton' variant="text">Search Books</Button></Link>
             </li>
           </ul>
