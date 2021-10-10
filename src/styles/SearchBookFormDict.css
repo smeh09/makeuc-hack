@@ -1,0 +1,18 @@
+.searchBookFormInput {
+    margin-bottom: 40px;
+    
+  }
+  
+  .searchBookFormInput:last-child {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 450px){
+      
+    .searchBookHeading {
+        width: 170vw;
+      }
+    .dict-input{
+        width: 170vw;
+    }
+  }

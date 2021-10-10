@@ -2,7 +2,7 @@ import { useParams } from "react-router"
 import ApiCall from "../modules/ApiCall"
 import { useState, useEffect } from "react"
 import "../styles/BookSelect.css"
-
+import "../styles/NoResultsFound.css"
 const BookSelect = (props) => {
     const [book, setBook] = useState([])
     let params = useParams()
@@ -133,10 +133,10 @@ const BookSelect = (props) => {
     }
     else {
         return (
-        <div>
-            <h2>No Results Found</h2>
-            <img src="https://cdn.dribbble.com/users/1554526/screenshots/3399669/no_results_found.png" alt="error "/>
-            <h3>We could not find any results related to your search, please try again later or with a different a keyword</h3>
+        <div className="no-results-container">
+            <h1 className="no-results-head">No Books Found</h1>
+            <img src="https://cdn.dribbble.com/users/1554526/screenshots/3399669/no_results_found.png" alt="error " className="no-results-image"/>
+            <h2 className="no-results-p">Please Try Again With a Different keyword or Later</h2>
         </div>)
     }
 

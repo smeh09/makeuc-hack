@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import CleanUrlDict from "../modules/CleanUrlDict"
 import { useParams } from "react-router-dom";
 import "../styles/DictApiResults.css"
+import "../styles/NoResultsFound.css"
 const DictApiResults = (props) => {
 
     let params = useParams()
@@ -54,10 +55,10 @@ const DictApiResults = (props) => {
     )}
     else {
         return (
-            <div>
-            <h2>{meaning.title}</h2>
-            <img src="https://cdn.dribbble.com/users/1554526/screenshots/3399669/no_results_found.png" alt="error "/>
-            <p>This likely happened because the word you typed does not exist in the language you have chosen, please try again with a different word or you can try searching the web</p>
+            <div className="no-results-container">
+            <h1 className="no-results-head">{meaning.title}</h1>
+            <img src="https://cdn.dribbble.com/users/1554526/screenshots/3399669/no_results_found.png" alt="error " className="no-results-image"/>
+            <h2 className="no-results-p" >This likely happened because the word you typed does not exist in the language you have chosen, please try again with a different word or you can try searching the web</h2>
             </div>
         )
     }

@@ -5,6 +5,7 @@ import InputLabel from '@mui/material/InputLabel';
 import Input from '@mui/material/Input';
 import { useState } from 'react';
 import '../styles/SearchBookForm.css';
+import "../styles/SearchBookFormDict.css";
 import {useHistory} from "react-router";
 const DictForm = () => {
     const [word, setWord] = useState("")
@@ -20,7 +21,7 @@ const DictForm = () => {
 
     return (
         <div className="searchBook">
-            <h1>Input Your Word (No Spaces Allowed)</h1>
+            <h1 className="dict-input">Input Your Word (No Spaces Allowed)</h1>
             <form className = 'contactUsFormContainer'>
                 <FormControl>
                     <InputLabel>Word</InputLabel>
