@@ -2,7 +2,7 @@ import { useParams } from "react-router"
 import ApiCall from "../modules/ApiCall"
 import { useState, useEffect } from "react"
 import "../styles/BookSelect.css"
-import "../styles/NoResultsFound.css"
+
 const BookSelect = (props) => {
     const [book, setBook] = useState([])
     let params = useParams()

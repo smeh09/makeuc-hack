@@ -22,7 +22,34 @@
 }
 
 .bookRightArea {
-  padding-left: 20px;
+  width: 70%;
+}
+
+@media screen and (max-width: 1050px) {
+  .book {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bookRightArea {
+    text-align: center;
+    width: 100%;
+  }
+  .bookAuthor {
+    text-align: center !important;
+  }
+  .book {
+    padding: 15px 30px !important;
+    margin: 20px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .results {
+    padding: 0 !important;
+  }
+  .bookTite {
+    font-size: 25px !important;
+  }
 }
 
 .bookTite {
@@ -38,6 +65,7 @@
 
 .bookAuthor {
   font-size: 22px;
+  text-align: right;
 }
 
 .bookCategories {

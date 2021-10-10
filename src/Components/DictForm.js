@@ -7,6 +7,7 @@ import { useState } from 'react';
 import '../styles/SearchBookForm.css';
 import "../styles/SearchBookFormDict.css";
 import {useHistory} from "react-router";
+
 const DictForm = () => {
     const [word, setWord] = useState("")
     const [lang, setLang] = useState("en")

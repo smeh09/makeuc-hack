@@ -63,11 +63,46 @@
 }
 
 #preview{
-  margin-left: 25%;
-  margin-top: -2%;
+  margin-left: 20px;
+  margin-top: 0 !important;
 }
 
 .note {
   margin-top: 100px;
   text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .bookContainer {
+    flex-direction: column;
+  }
+}
+
+.links {
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media screen and (max-width: 730px) {
+  .links {
+    flex-direction: column;
+  }
+  .link {
+    margin-bottom: 40px;
+  }
+  #preview {
+    margin-left: 0 !important;
+  }
+  .bookData {
+    padding: 10px 0 !important;
+  }
+  .bookContainer {
+    padding: 10px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bookImg {
+    width: 250px;
+  }
 }

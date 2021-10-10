@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/Result.css";
 import Button from '@mui/material/Button';
+import "../styles/NoResultsFound.css"
 
 const Results = (props) => {
     const [books, setBooks] = useState([])
@@ -52,11 +53,11 @@ const Results = (props) => {
     }
     else {
         return (
-        <div className="results">
-            <h2>No Results Found</h2>
-            <img src="https://cdn.dribbble.com/users/1554526/screenshots/3399669/no_results_found.png" alt="error "/>
-            <h3>We could not find any results related to your search, please try again later or with a different a keyword</h3>
-        </div>)
+            <div className="no-results-container">
+                <h1 className="no-results-head">No Books Found</h1>
+                <img src="https://cdn.dribbble.com/users/1554526/screenshots/3399669/no_results_found.png" alt="error " className="no-results-image"/>
+                <h2 className="no-results-p">Please Try Again With a Different keyword or Later</h2>
+            </div>)
     }
 }
 export default Results;

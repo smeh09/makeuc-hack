@@ -4,6 +4,7 @@ import CleanUrlDict from "../modules/CleanUrlDict"
 import { useParams } from "react-router-dom";
 import "../styles/DictApiResults.css"
 import "../styles/NoResultsFound.css"
+
 const DictApiResults = (props) => {
 
     let params = useParams()
