@@ -25,20 +25,25 @@ const DictApiResults = (props) => {
 
     console.log(meaning)
 
-    if (meaning.title !== "No Definitions Found"){
+    if (meaning.title !== "No Definitions Found") {
     return (
         <div className="meaning-container">
             <div className="try">
             {
-                meaning.map((mean, i) => {
+                meaning.map((mean, i1) => {
                     return (
-                        <div key={i} className='meaning'>
+                        <div key={i1} className='meaning'>
                             <h1 className='word'>{mean["word"]}</h1>
-                            {mean["meanings"].map((meaningObj, i) => {
+                            {mean["meanings"].map((meaningObj, i2) => {
                                 return (
-                                    meaningObj["definitions"].map((definition, i) => {
+                                    meaningObj["definitions"].map((definition, i3) => {
                                         return (
-                                            <div key={i} className='wordmeaning'>
+                                            <div key={i3} className='wordmeaning'>
+                                                <audio controls>
+                                                    {console.log(i1)}
+                                                    <source src={mean.phonetics[i1].audio} type="audio/mp3" />
+                                                    Your browser does not support the audio tag.
+                                                </audio>
                                                 <h3 className='meaning'>Meaning: {definition["definition"]}</h3>
                                                 <p className='example'>Example: {definition["example"]}</p>
                                                 <p className='type'>Type: {meaningObj["partOfSpeech"]}</p>
