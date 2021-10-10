@@ -5,7 +5,7 @@
 }
 
 .contactUsFormContainer {
-  width: 400px;
+  width: 600px !important;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@
 
 .searchBookFormInput {
   margin-bottom: 30px;
+  
 }
 
 .searchBookFormInput:last-child {
@@ -28,6 +29,6 @@ select {
 }
 
 .searchBookHeading {
-  font-size: 40px;
-  margin-bottom: 40px;
+  font-size: 45px;
+  margin-bottom: 55px;
 }
