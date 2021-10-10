@@ -22,7 +22,7 @@ const DictForm = () => {
 
     return (
         <div className="searchBook">
-            <h1 className="dict-input">Input Your Word (No Spaces Allowed)</h1>
+            <h1 className="dict-input">Input Your Word <i title="(No spaces allowed)" className="fa fa-question-circle" aria-hidden="true"></i></h1>
             <form className = 'contactUsFormContainer'>
                 <FormControl>
                     <InputLabel>Word</InputLabel>

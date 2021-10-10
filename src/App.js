@@ -13,27 +13,31 @@ import DictApiResults from "./Components/DictApiResults";
 import DictForm from "./Components/DictForm";
 import About from "./Components/About";
 import { Cards } from "./Components/Cards";
+import { Footer } from "./Components/Footer"
 
 function App() {
   return (
     <div>
       <Router>
-        <Header title="Search Books" />
-        
+        <Header title="LectoPoint" />
         <Switch>
           <Route exact path='/'>
             <Features />
             <Cards />
             <ContanctUs />
+            <Footer />
           </Route>
           <Route exact path="/dictionary/:lang/:word">
               <DictApiResults/>
+              <Footer />
           </Route>
           <Route exact path="/book/:id">
               <BookSelect/>
+              <Footer />
           </Route>
           <Route exact path="/details/:keyword/:keywordInAuthor/:keywordInTtile/:keywordInPublisher/:filter/:lang/:printType">
             <Results />
+            <Footer />
           </Route>
           <Route exact path='/searchBook'>
             <SearchBookForm />
