@@ -34,16 +34,21 @@ const DictApiResults = (props) => {
                     return (
                         <div key={i1} className='meaning'>
                             <h1 className='word'>{mean["word"]}</h1>
+                            {console.log(i1)}
+                            {
+                                mean.phonetics.map((phonetic, i) => {
+                                    return (
+                                        <audio controls>
+                                            <source key={i} src={phonetic.audio} type="audio/mp3" />
+                                        </audio>
+                                    )
+                                })
+                            }
                             {mean["meanings"].map((meaningObj, i2) => {
                                 return (
                                     meaningObj["definitions"].map((definition, i3) => {
                                         return (
                                             <div key={i3} className='wordmeaning'>
-                                                <audio controls>
-                                                    {console.log(i1)}
-                                                    <source src={mean.phonetics[i1].audio} type="audio/mp3" />
-                                                    Your browser does not support the audio tag.
-                                                </audio>
                                                 <h3 className='meaning'>Meaning: {definition["definition"]}</h3>
                                                 <p className='example'>Example: {definition["example"]}</p>
                                                 <p className='type'>Type: {meaningObj["partOfSpeech"]}</p>
