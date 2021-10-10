@@ -1,11 +1,27 @@
 .wordmeaning {
+  
+  font-size: 170%;
   margin: 0px 50px;
 }
 
 .word {
+  font-size: 330%;
   margin-left: 20px;
 }
 
 .meaning {
+  
+  text-align: center;
   padding: 30px 0;
+}
+
+.word {
+  text-align: center;
+}
+.try{
+  margin-top: 3%;
+  margin-left: 2%;
+  border-radius: 5px;
+  width: 95vw;
+  box-shadow: 4px 4px 25px rgb(143, 143, 143);
 }

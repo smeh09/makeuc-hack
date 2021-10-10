@@ -24,12 +24,13 @@ const DictApiResults = (props) => {
     console.log(meaning)
     if (meaning.title !== "No Definitions Found"){
     return (
-        <div>
+        <div className="meaning-container">
+            <div className="try">
             {
                 meaning.map((mean, i) => {
                     return (
                         <div key={i} className='meaning'>
-                            <h2 className='word'>{mean["word"]}</h2>
+                            <h1 className='word'>{mean["word"]}</h1>
                             {mean["meanings"].map((meaningObj, i) => {
                                 return (
                                     meaningObj["definitions"].map((definition, i) => {
@@ -47,6 +48,7 @@ const DictApiResults = (props) => {
                     )
                 })
             }
+            </div>
         </div>
     )}
     else {
